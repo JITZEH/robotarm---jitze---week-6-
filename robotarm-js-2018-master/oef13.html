@@ -1,0 +1,51 @@
+ <html>
+    <body>
+       <h1>
+        <button><a href='oef12.html'>vorige opdracht</a></button>
+        <button><a href=' oef1.html'> volgende opdracht</a></button>
+        </h1> 
+        <canvas id="canvas" width="800" height="600"></canvas>
+        <script src="./robot-arm.js"></script>
+        <script>
+            // Robotarm bibliotheek inladen
+            var canvas = document.getElementById("canvas");
+            var robotArm = new RobotArm(canvas);
+            
+            // Het level inladen
+            robotArm.loadLevel("exercise 13");
+            
+            // Jou instructies volgen hier
+            robotArm.randomLevel( 1, 8);
+            
+            // Jou instructies volgen hier
+            var right = 1
+
+            block == "blue"
+
+            robotArm.speed=1000
+
+            robotArm.grab();
+            var block = robotArm.scan();
+            robotArm.scan();
+
+
+            var move = 1;
+            while (block!=null) {
+                for (var y = 0; y < move; y++){
+               robotArm.moveRight();
+            }
+               robotArm.drop();
+               for (var y = 0; y < move; y++){
+               robotArm.moveLeft();
+            }
+               robotArm.grab();
+               block = robotArm.scan();
+               move++;
+            }
+
+            // De door jou opgegeven instructies uitvoeren
+            robotArm.run();
+            robotArm.speed = 2000
+        </script>
+    </body>
+</html>
