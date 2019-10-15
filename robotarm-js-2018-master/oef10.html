@@ -1,0 +1,42 @@
+<html>
+
+<body>
+    <h1>
+        <button><a href='oef9.html'>vorige opdracht</a></button>
+        <button><a href='oef11.html'> volgende opdracht</a></button>
+    </h1>
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <script src="./robot-arm.js"></script>
+    <script>
+        // Robotarm bibliotheek inladen
+        var canvas = document.getElementById("canvas");
+        var robotArm = new RobotArm(canvas);
+
+        // Het level inladen
+        robotArm.speed = 100000;
+        robotArm.loadLevel("exercise 10")
+
+                let amount1 = 9
+            let amount2 = 8
+            for (let i = 0; i < 5; i++) {
+                robotArm.grab();
+                for (let i = 0; i < amount1; i++) {
+                    robotArm.moveRight();     
+                }  
+                robotArm.drop();
+                for (let i = 0; i < amount2; i++) {
+                    robotArm.moveLeft();
+                }
+                amount1-=2
+                amount2-=2   
+            }
+                    
+
+
+
+
+        robotArm.run();
+    </script>
+</body>
+
+</html>
