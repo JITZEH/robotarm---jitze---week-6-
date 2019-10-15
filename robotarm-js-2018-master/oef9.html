@@ -11,25 +11,27 @@
         // Robotarm bibliotheek inladen
         var canvas = document.getElementById("canvas");
         var robotArm = new RobotArm(canvas);
-
+        var amount = 4;
         // Het level inladen
         robotArm.speed = 100000;
         robotArm.loadLevel("exercise 9");
-for(i=0; i<3; i++){
-            robotArm.moveRight();
-            }
-            for(l=0; l<10; l++){
-            for(j=0; j<4; j++){
-            robotArm.grab();
-            for(i=0; i<5; i++){
-            robotArm.moveRight();
-            }
-            robotArm.drop();
-             for(i=0; i<5; i++){
-            robotArm.moveLeft();
-            }}
-            robotArm.moveLeft();
-        }
+        for (i = 0; i < 3; i++) {
+            robotArm.moveRight();
+        }
+        for (l = 0; l < 4; l++) { //stapels
+            for (j = 0; j < amount; j++) { // blokjes
+                robotArm.grab();
+                for (i = 0; i < 5; i++) {
+                    robotArm.moveRight();
+                }
+                robotArm.drop();
+                for (i = 0; i < 5; i++) {
+                    robotArm.moveLeft();
+                }
+            }
+            robotArm.moveLeft();
+            amount--;
+        }
         robotArm.run();
     </script>
 </body>
